@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Instagram, Facebook, Linkedin, Send } from "lucide-react";
+import { Phone, Instagram, Facebook, Linkedin, Send, MessageCircle } from "lucide-react";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -81,7 +81,7 @@ const ContactPage = () => {
               </div>
             </a>
             <a href="https://wa.me/0985715537" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
-              <Phone size={20} className="text-primary flex-shrink-0" />
+              <MessageCircle size={20} className="text-primary flex-shrink-0" />
               <div>
                 <p className="text-xs text-muted-foreground">واتساب</p>
                 <p className="text-sm font-semibold" dir="ltr">0985715537</p>

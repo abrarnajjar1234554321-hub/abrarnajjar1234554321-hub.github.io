@@ -73,32 +73,32 @@ const ContactPage = () => {
 
           {/* Contact Info */}
           <div className="md:col-span-2 space-y-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <a href="mailto:hello@devai.com" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
-              <Mail size={20} className="text-primary flex-shrink-0" />
+            <a href="tel:0985715537" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
+              <Phone size={20} className="text-primary flex-shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">البريد الإلكتروني</p>
-                <p className="text-sm font-semibold" dir="ltr">hello@devai.com</p>
+                <p className="text-xs text-muted-foreground">الهاتف</p>
+                <p className="text-sm font-semibold" dir="ltr">0985715537</p>
               </div>
             </a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
+            <a href="https://wa.me/0985715537" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
               <Phone size={20} className="text-primary flex-shrink-0" />
               <div>
                 <p className="text-xs text-muted-foreground">واتساب</p>
-                <p className="text-sm font-semibold" dir="ltr">+123 456 7890</p>
+                <p className="text-sm font-semibold" dir="ltr">0985715537</p>
               </div>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
               <Linkedin size={20} className="text-primary flex-shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">لينكدإن</p>
+                <p className="text-xs text-muted-foreground">انستغرام</p>
                 <p className="text-sm font-semibold">الملف الشخصي</p>
               </div>
             </a>
-            <a href="#" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
-              <Calendar size={20} className="text-primary flex-shrink-0" />
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
+              <Linkedin size={20} className="text-primary flex-shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">احجز مكالمة</p>
-                <p className="text-sm font-semibold">Calendly</p>
+                <p className="text-xs text-muted-foreground">فيسبوك</p>
+                <p className="text-sm font-semibold">الصفحة الرسمية</p>
               </div>
             </a>
           </div>

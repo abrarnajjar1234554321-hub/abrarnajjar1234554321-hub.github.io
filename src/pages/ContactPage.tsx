@@ -88,17 +88,24 @@ const ContactPage = () => {
               </div>
             </a>
             <a href="https://instagram.com" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
-              <Linkedin size={20} className="text-primary flex-shrink-0" />
+              <Instagram size={20} className="text-primary flex-shrink-0" />
               <div>
                 <p className="text-xs text-muted-foreground">انستغرام</p>
                 <p className="text-sm font-semibold">الملف الشخصي</p>
               </div>
             </a>
             <a href="https://facebook.com" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
-              <Linkedin size={20} className="text-primary flex-shrink-0" />
+              <Facebook size={20} className="text-primary flex-shrink-0" />
               <div>
                 <p className="text-xs text-muted-foreground">فيسبوك</p>
                 <p className="text-sm font-semibold">الصفحة الرسمية</p>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="glass-card p-5 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-colors">
+              <Linkedin size={20} className="text-primary flex-shrink-0" />
+              <div>
+                <p className="text-xs text-muted-foreground">لينكدإن</p>
+                <p className="text-sm font-semibold">الملف الشخصي</p>
               </div>
             </a>
           </div>

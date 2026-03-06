@@ -29,25 +29,36 @@ const HomePage = () => {
         <div className="particle-dot w-1 h-1 top-32 left-[40%]" style={{ animationDelay: "3s" }} />
         <div className="particle-dot w-2.5 h-2.5 bottom-48 left-[10%]" style={{ animationDelay: "5s" }} />
 
-        {/* 3D Floating geometric shapes */}
-        <div className="floating-cube absolute top-24 left-[8%] w-12 h-12 opacity-20" style={{ animationDelay: "0s" }} />
-        <div className="floating-cube absolute bottom-40 right-[5%] w-8 h-8 opacity-15" style={{ animationDelay: "2s" }} />
-        <div className="floating-ring absolute top-36 right-[15%] w-20 h-20 opacity-10" style={{ animationDelay: "1s" }} />
-        <div className="floating-ring absolute bottom-24 left-[25%] w-14 h-14 opacity-15" style={{ animationDelay: "3s" }} />
-        <div className="floating-diamond absolute top-48 left-[75%] w-10 h-10 opacity-15" style={{ animationDelay: "1.5s" }} />
-        <div className="floating-diamond absolute bottom-60 right-[40%] w-6 h-6 opacity-20" style={{ animationDelay: "4s" }} />
+        {/* 3D Floating geometric shapes - more visible */}
+        <div className="floating-cube absolute top-24 left-[8%] w-16 h-16 opacity-30" style={{ animationDelay: "0s" }} />
+        <div className="floating-cube absolute bottom-40 right-[5%] w-12 h-12 opacity-25" style={{ animationDelay: "2s" }} />
+        <div className="floating-ring absolute top-28 right-[12%] w-24 h-24 opacity-25" style={{ animationDelay: "1s" }} />
+        <div className="floating-ring absolute bottom-24 left-[25%] w-18 h-18 opacity-20" style={{ animationDelay: "3s" }} />
+        <div className="floating-diamond absolute top-48 left-[75%] w-14 h-14 opacity-25" style={{ animationDelay: "1.5s" }} />
+        <div className="floating-diamond absolute bottom-60 right-[40%] w-10 h-10 opacity-30" style={{ animationDelay: "4s" }} />
+
+        {/* 3D Hexagons */}
+        <div className="floating-hexagon absolute top-16 left-[30%] w-20 h-20 opacity-20" style={{ animationDelay: "0.5s" }} />
+        <div className="floating-hexagon absolute bottom-32 right-[25%] w-14 h-14 opacity-25" style={{ animationDelay: "3.5s" }} />
+
+        {/* Orbit rings */}
+        <div className="orbit-ring absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.07]" />
+        <div className="orbit-ring absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] opacity-[0.05]" style={{ animationDelay: "3s", animationDirection: "reverse" }} />
 
         {/* Glowing orbs */}
-        <div className="glow-orb absolute top-16 left-[50%] w-32 h-32" />
-        <div className="glow-orb-accent absolute bottom-20 right-[20%] w-24 h-24" />
+        <div className="glow-orb absolute top-16 left-[50%] w-40 h-40" />
+        <div className="glow-orb-accent absolute bottom-20 right-[20%] w-32 h-32" />
+
+        {/* Scan line */}
+        <div className="scan-line absolute inset-0 pointer-events-none" />
 
         <div className="container relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="inline-block glass-card px-4 py-1.5 text-xs text-primary mb-6 animate-fade-in">
+            <div className="inline-block glass-card px-4 py-1.5 text-xs text-primary mb-6 animate-fade-in pulse-glow-border">
               🚀 مطور ويب بأسلوب الذكاء الاصطناعي
             </div>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              أحول <span className="gradient-text">أفكارك</span> إلى
+              أحول <span className="gradient-text glow-text">أفكارك</span> إلى
               <br />
               واقع رقمي
             </h1>
@@ -71,13 +82,17 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* 3D Card */}
-          <div className="mt-16 max-w-md mx-auto float-3d animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <div className="glass-card p-6 rounded-2xl">
+          {/* 3D Code Card */}
+          <div className="mt-16 max-w-md mx-auto tilt-3d animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <div className="glass-card p-6 rounded-2xl relative overflow-hidden">
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-2xl" />
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-3 h-3 rounded-full bg-destructive" />
                 <div className="w-3 h-3 rounded-full bg-accent" />
                 <div className="w-3 h-3 rounded-full bg-primary" />
+                <span className="text-muted-foreground text-[10px] font-mono mr-auto" dir="ltr">project.ts</span>
               </div>
               <div className="space-y-2 font-mono text-sm" dir="ltr">
                 <p className="text-muted-foreground">
@@ -95,6 +110,8 @@ const HomePage = () => {
                 </p>
                 <p className="text-muted-foreground">{"}"}</p>
               </div>
+              {/* Typing cursor */}
+              <div className="typing-cursor mt-2 w-2 h-4 bg-primary/70 rounded-sm" />
             </div>
           </div>
         </div>
@@ -124,9 +141,10 @@ const HomePage = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 relative">
-        <div className="floating-ring absolute top-10 right-[5%] w-16 h-16 opacity-10" style={{ animationDelay: "0s" }} />
-        <div className="floating-diamond absolute bottom-10 left-[8%] w-8 h-8 opacity-10" style={{ animationDelay: "2s" }} />
+      <section className="py-20 relative overflow-hidden">
+        <div className="floating-ring absolute top-10 right-[5%] w-20 h-20 opacity-20" style={{ animationDelay: "0s" }} />
+        <div className="floating-diamond absolute bottom-10 left-[8%] w-12 h-12 opacity-20" style={{ animationDelay: "2s" }} />
+        <div className="floating-hexagon absolute top-1/2 left-[3%] w-16 h-16 opacity-15" style={{ animationDelay: "1s" }} />
         <div className="container relative z-10">
           <h2 className="text-3xl font-heading font-bold text-center mb-4">
             <span className="gradient-text">خدماتي</span>
@@ -158,7 +176,9 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Preview */}
-      <section className="py-20">
+      <section className="py-20 relative overflow-hidden">
+        <div className="floating-cube absolute top-12 left-[5%] w-10 h-10 opacity-20" style={{ animationDelay: "0.5s" }} />
+        <div className="floating-ring absolute bottom-12 right-[8%] w-16 h-16 opacity-15" style={{ animationDelay: "2.5s" }} />
         <div className="container">
           <h2 className="text-3xl font-heading font-bold text-center mb-12">
             ماذا يقول <span className="gradient-text">عملائي</span>
@@ -184,11 +204,17 @@ const HomePage = () => {
 
       {/* CTA */}
       <section className="py-20 relative overflow-hidden">
-        <div className="floating-cube absolute top-8 left-[10%] w-10 h-10 opacity-10" style={{ animationDelay: "1s" }} />
-        <div className="floating-cube absolute bottom-8 right-[10%] w-6 h-6 opacity-10" style={{ animationDelay: "3s" }} />
-        <div className="glow-orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 opacity-50" />
+        <div className="floating-cube absolute top-8 left-[10%] w-14 h-14 opacity-20" style={{ animationDelay: "1s" }} />
+        <div className="floating-cube absolute bottom-8 right-[10%] w-10 h-10 opacity-20" style={{ animationDelay: "3s" }} />
+        <div className="floating-hexagon absolute top-1/3 right-[5%] w-12 h-12 opacity-15" style={{ animationDelay: "2s" }} />
+        <div className="glow-orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 opacity-60" />
         <div className="container relative z-10">
-          <div className="glass-card rounded-2xl p-10 text-center glow-border">
+          <div className="glass-card rounded-2xl p-10 text-center glow-border relative overflow-hidden">
+            {/* Corner accents on CTA */}
+            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary/30 rounded-tl-2xl" />
+            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-accent/30 rounded-tr-2xl" />
+            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-accent/30 rounded-bl-2xl" />
+            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-primary/30 rounded-br-2xl" />
             <h2 className="text-3xl font-heading font-bold mb-4">
               جاهز لبناء مشروعك <span className="gradient-text">الرقمي</span>؟
             </h2>

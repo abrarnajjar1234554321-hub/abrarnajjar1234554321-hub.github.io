@@ -54,8 +54,10 @@ const services = [
 
 const ServicesPage = () => {
   return (
-    <div className="py-20">
-      <div className="container">
+    <div className="py-20 relative overflow-hidden">
+      <div className="floating-orb w-80 h-80 -top-20 -left-20" />
+      <div className="floating-orb-accent w-64 h-64 bottom-10 -right-20" style={{ animationDelay: "4s" }} />
+      <div className="container relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
             <span className="gradient-text">خدماتي</span>
@@ -69,7 +71,7 @@ const ServicesPage = () => {
           {services.map((service, i) => (
             <div
               key={service.id}
-              className="glass-card p-8 rounded-2xl float-3d animate-fade-in group"
+              className="glass-card p-8 rounded-2xl hover-lift tilt-card shimmer animate-fade-in group"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-5">

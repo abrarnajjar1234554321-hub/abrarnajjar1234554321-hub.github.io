@@ -11,8 +11,10 @@ const testimonials = [
 
 const TestimonialsPage = () => {
   return (
-    <div className="py-20">
-      <div className="container">
+    <div className="py-20 relative overflow-hidden">
+      <div className="floating-orb w-64 h-64 -top-10 left-[10%]" style={{ animationDelay: "2s" }} />
+      <div className="floating-orb-accent w-72 h-72 bottom-10 -right-20" style={{ animationDelay: "5s" }} />
+      <div className="container relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
             آراء <span className="gradient-text">العملاء</span>
@@ -26,7 +28,7 @@ const TestimonialsPage = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="glass-card p-8 rounded-2xl float-3d animate-fade-in relative"
+              className="glass-card p-8 rounded-2xl hover-lift tilt-card animate-fade-in relative"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <Quote size={32} className="text-primary/20 absolute top-6 left-6" />

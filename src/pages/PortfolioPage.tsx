@@ -47,8 +47,10 @@ const projects = [
 
 const PortfolioPage = () => {
   return (
-    <div className="py-20">
-      <div className="container">
+    <div className="py-20 relative overflow-hidden">
+      <div className="floating-orb w-72 h-72 top-20 -right-20" style={{ animationDelay: "1s" }} />
+      <div className="floating-orb-accent w-56 h-56 bottom-20 -left-10" style={{ animationDelay: "3s" }} />
+      <div className="container relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
             <span className="gradient-text">أعمالي</span> السابقة
@@ -62,7 +64,7 @@ const PortfolioPage = () => {
           {projects.map((project, i) => (
             <div
               key={i}
-              className="glass-card rounded-2xl overflow-hidden float-3d animate-fade-in group"
+              className="glass-card rounded-2xl overflow-hidden hover-lift tilt-card animate-fade-in group"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="h-40 gradient-primary flex items-center justify-center text-6xl opacity-80">

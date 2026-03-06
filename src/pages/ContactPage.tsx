@@ -12,10 +12,8 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="py-20 relative overflow-hidden">
-      <div className="floating-orb w-72 h-72 -top-20 -left-10" style={{ animationDelay: "1s" }} />
-      <div className="floating-orb-accent w-56 h-56 bottom-10 -right-20" style={{ animationDelay: "4s" }} />
-      <div className="container max-w-3xl relative z-10">
+    <div className="py-20">
+      <div className="container max-w-3xl">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
             <span className="gradient-text">تواصل</span> معي
@@ -27,7 +25,7 @@ const ContactPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Form */}
-          <div className="md:col-span-3 glass-card p-8 rounded-2xl shimmer animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <div className="md:col-span-3 glass-card p-8 rounded-2xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="text-sm font-semibold mb-2 block">الاسم</label>

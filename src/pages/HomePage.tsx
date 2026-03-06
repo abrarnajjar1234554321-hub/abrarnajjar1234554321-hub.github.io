@@ -21,19 +21,14 @@ const HomePage = () => {
     <div>
       {/* Hero */}
       <section className="min-h-[90vh] flex items-center relative overflow-hidden">
-        {/* Floating orbs */}
-        <div className="floating-orb w-72 h-72 -top-20 -right-20" style={{ animationDelay: "0s" }} />
-        <div className="floating-orb-accent w-96 h-96 -bottom-32 -left-32" style={{ animationDelay: "3s" }} />
-        <div className="floating-orb w-48 h-48 top-1/3 left-[60%]" style={{ animationDelay: "5s" }} />
-
         <div className="particle-dot w-2 h-2 top-20 right-[10%]" style={{ animationDelay: "0s" }} />
         <div className="particle-dot w-3 h-3 top-40 left-[20%]" style={{ animationDelay: "2s" }} />
         <div className="particle-dot w-1.5 h-1.5 bottom-32 right-[30%]" style={{ animationDelay: "4s" }} />
         <div className="particle-dot w-2 h-2 top-60 left-[60%]" style={{ animationDelay: "1s" }} />
 
-        <div className="container relative z-10">
+        <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="inline-block glass-card px-4 py-1.5 text-xs text-primary mb-6 animate-fade-in shimmer">
+            <div className="inline-block glass-card px-4 py-1.5 text-xs text-primary mb-6 animate-fade-in">
               🚀 مطور ويب بأسلوب الذكاء الاصطناعي
             </div>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
@@ -47,13 +42,13 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link
                 to="/contact"
-                className="gradient-primary px-8 py-3 rounded-lg font-bold text-primary-foreground hover:opacity-90 transition-opacity glow-border hover-lift"
+                className="gradient-primary px-8 py-3 rounded-lg font-bold text-primary-foreground hover:opacity-90 transition-opacity glow-border"
               >
                 اطلب خدمتك الآن
               </Link>
               <Link
                 to="/portfolio"
-                className="glass-card px-8 py-3 rounded-lg font-semibold text-foreground hover:border-primary/50 transition-colors flex items-center justify-center gap-2 hover-lift"
+                className="glass-card px-8 py-3 rounded-lg font-semibold text-foreground hover:border-primary/50 transition-colors flex items-center justify-center gap-2"
               >
                 شاهد أعمالي
                 <ArrowLeft size={16} />
@@ -61,31 +56,29 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* 3D Card with rotating border */}
-          <div className="mt-16 max-w-md mx-auto animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <div className="rotate-border rounded-2xl tilt-card">
-              <div className="glass-card p-6 rounded-2xl">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-destructive" />
-                  <div className="w-3 h-3 rounded-full bg-accent" />
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                </div>
-                <div className="space-y-2 font-mono text-sm" dir="ltr">
-                  <p className="text-muted-foreground">
-                    <span className="text-accent">const</span>{" "}
-                    <span className="text-primary">project</span> = {"{"}
-                  </p>
-                  <p className="text-muted-foreground pr-4">
-                    design: <span className="text-primary">"amazing"</span>,
-                  </p>
-                  <p className="text-muted-foreground pr-4">
-                    speed: <span className="text-primary">"blazing"</span>,
-                  </p>
-                  <p className="text-muted-foreground pr-4">
-                    quality: <span className="text-primary">"premium"</span>
-                  </p>
-                  <p className="text-muted-foreground">{"}"}</p>
-                </div>
+          {/* 3D Card */}
+          <div className="mt-16 max-w-md mx-auto float-3d animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <div className="glass-card p-6 rounded-2xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 rounded-full bg-destructive" />
+                <div className="w-3 h-3 rounded-full bg-accent" />
+                <div className="w-3 h-3 rounded-full bg-primary" />
+              </div>
+              <div className="space-y-2 font-mono text-sm" dir="ltr">
+                <p className="text-muted-foreground">
+                  <span className="text-accent">const</span>{" "}
+                  <span className="text-primary">project</span> = {"{"}
+                </p>
+                <p className="text-muted-foreground pr-4">
+                  design: <span className="text-primary">"amazing"</span>,
+                </p>
+                <p className="text-muted-foreground pr-4">
+                  speed: <span className="text-primary">"blazing"</span>,
+                </p>
+                <p className="text-muted-foreground pr-4">
+                  quality: <span className="text-primary">"premium"</span>
+                </p>
+                <p className="text-muted-foreground">{"}"}</p>
               </div>
             </div>
           </div>
@@ -93,9 +86,8 @@ const HomePage = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="floating-orb-accent w-64 h-64 top-10 -right-20" style={{ animationDelay: "2s" }} />
-        <div className="container relative z-10">
+      <section className="py-20">
+        <div className="container">
           <h2 className="text-3xl font-heading font-bold text-center mb-4">
             <span className="gradient-text">خدماتي</span>
           </h2>
@@ -106,7 +98,7 @@ const HomePage = () => {
             {services.map((service, i) => (
               <div
                 key={i}
-                className="glass-card p-6 rounded-xl hover-lift shimmer animate-fade-in"
+                className="glass-card p-6 rounded-xl float-3d animate-fade-in"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
@@ -126,15 +118,14 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Preview */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="floating-orb w-56 h-56 bottom-0 left-[10%]" style={{ animationDelay: "1s" }} />
-        <div className="container relative z-10">
+      <section className="py-20">
+        <div className="container">
           <h2 className="text-3xl font-heading font-bold text-center mb-12">
             ماذا يقول <span className="gradient-text">عملائي</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="glass-card p-6 rounded-xl hover-lift animate-fade-in" style={{ animationDelay: `${i * 0.15}s` }}>
+              <div key={i} className="glass-card p-6 rounded-xl animate-fade-in" style={{ animationDelay: `${i * 0.15}s` }}>
                 <div className="flex gap-1 mb-3">
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-primary fill-primary" />
@@ -152,25 +143,21 @@ const HomePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="floating-orb w-80 h-80 -top-20 right-[20%]" style={{ animationDelay: "4s" }} />
-        <div className="floating-orb-accent w-60 h-60 bottom-0 left-[30%]" style={{ animationDelay: "2s" }} />
-        <div className="container relative z-10">
-          <div className="rotate-border rounded-2xl">
-            <div className="glass-card rounded-2xl p-10 text-center">
-              <h2 className="text-3xl font-heading font-bold mb-4">
-                جاهز لبناء مشروعك <span className="gradient-text">الرقمي</span>؟
-              </h2>
-              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-                تواصل معي الآن ودعنا نحول فكرتك إلى مشروع ناجح
-              </p>
-              <Link
-                to="/contact"
-                className="inline-block gradient-primary px-10 py-3 rounded-lg font-bold text-primary-foreground hover:opacity-90 transition-opacity hover-lift"
-              >
-                تواصل معي
-              </Link>
-            </div>
+      <section className="py-20">
+        <div className="container">
+          <div className="glass-card rounded-2xl p-10 text-center glow-border">
+            <h2 className="text-3xl font-heading font-bold mb-4">
+              جاهز لبناء مشروعك <span className="gradient-text">الرقمي</span>؟
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+              تواصل معي الآن ودعنا نحول فكرتك إلى مشروع ناجح
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block gradient-primary px-10 py-3 rounded-lg font-bold text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              تواصل معي
+            </Link>
           </div>
         </div>
       </section>

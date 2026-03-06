@@ -20,10 +20,8 @@ const reasons = [
 
 const AboutPage = () => {
   return (
-    <div className="py-20 relative overflow-hidden">
-      <div className="floating-orb w-72 h-72 -top-10 -right-20" />
-      <div className="floating-orb-accent w-64 h-64 bottom-20 -left-20" style={{ animationDelay: "3s" }} />
-      <div className="container max-w-3xl relative z-10">
+    <div className="py-20">
+      <div className="container max-w-3xl">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
@@ -35,7 +33,7 @@ const AboutPage = () => {
         </div>
 
         {/* Story */}
-        <div className="glass-card p-8 rounded-2xl mb-12 hover-lift shimmer animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        <div className="glass-card p-8 rounded-2xl mb-12 float-3d animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <h2 className="text-2xl font-heading font-bold mb-4 gradient-text">قصتي المهنية</h2>
           <p className="text-secondary-foreground leading-relaxed mb-4">
             بدأت رحلتي في عالم البرمجة منذ أكثر من 5 سنوات، حيث تعلمت تطوير المواقع والتطبيقات بتقنيات حديثة. عملت مع عشرات العملاء من مختلف المجالات وساعدتهم في تحقيق أهدافهم الرقمية.
@@ -52,7 +50,7 @@ const AboutPage = () => {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {skills.map((skill, i) => (
-              <div key={i} className="glass-card p-4 rounded-xl text-center hover-lift tilt-card">
+              <div key={i} className="glass-card p-4 rounded-xl text-center float-3d">
                 <skill.icon size={28} className="text-primary mx-auto mb-2" />
                 <p className="text-sm font-semibold">{skill.name}</p>
               </div>
@@ -65,8 +63,7 @@ const AboutPage = () => {
           <h2 className="text-2xl font-heading font-bold mb-6 text-center">
             لماذا <span className="gradient-text">يختارني</span> العملاء
           </h2>
-          <div className="rotate-border rounded-2xl">
-            <div className="glass-card p-8 rounded-2xl">
+          <div className="glass-card p-8 rounded-2xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {reasons.map((reason, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -74,7 +71,6 @@ const AboutPage = () => {
                   <p className="text-sm text-secondary-foreground">{reason}</p>
                 </div>
               ))}
-            </div>
             </div>
           </div>
         </div>

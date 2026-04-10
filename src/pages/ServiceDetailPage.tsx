@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import BackButton from "@/components/BackButton";
 
 const servicesData: Record<string, {
   title: string;
@@ -75,9 +76,8 @@ const ServiceDetailPage = () => {
   return (
     <div className="py-20">
       <div className="container max-w-3xl">
-        <Link to="/services" className="text-muted-foreground hover:text-primary text-sm flex items-center gap-1 mb-8">
-          <ArrowRight size={14} /> العودة للخدمات
-        </Link>
+        {/* Back Button */}
+        <BackButton to="/services" label="العودة للخدمات" />
 
         <div className="animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4 gradient-text">{service.title}</h1>

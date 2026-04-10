@@ -54,7 +54,7 @@ const HomePage = () => {
 
         <div className="container relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="inline-block glass-card px-4 py-1.5 text-xs text-primary mb-6 animate-fade-in pulse-glow-border">
+            <div className="neon-card inline-block px-4 py-1.5 text-xs text-primary mb-6 animate-fade-in neon-pulse cursor-pointer">
               🚀 مطور ويب بأسلوب الذكاء الاصطناعي
             </div>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
@@ -74,7 +74,7 @@ const HomePage = () => {
               </Link>
               <Link
                 to="/portfolio"
-                className="glass-card px-8 py-3 rounded-lg font-semibold text-foreground hover:border-primary/50 transition-colors flex items-center justify-center gap-2"
+                className="neon-card px-8 py-3 rounded-lg font-semibold text-foreground hover:border-primary/50 transition-colors flex items-center justify-center gap-2"
               >
                 شاهد أعمالي
                 <ArrowLeft size={16} />
@@ -82,30 +82,32 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* 3D Code Card */}
+          {/* 3D Code Card with Neon Effect */}
           <div className="mt-16 max-w-md mx-auto tilt-3d animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <div className="glass-card p-6 rounded-2xl relative overflow-hidden">
+            <div className="neon-card p-6 rounded-2xl relative overflow-hidden cursor-pointer">
               {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-2xl" />
+              <div className="card-corner-accent top-left" />
+              <div className="card-corner-accent bottom-right" />
+              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent/40 rounded-tr-2xl" />
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-accent/40 rounded-bl-2xl" />
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-3 h-3 rounded-full bg-destructive" />
                 <div className="w-3 h-3 rounded-full bg-accent" />
                 <div className="w-3 h-3 rounded-full bg-primary" />
-                <span className="text-muted-foreground text-[10px] font-mono mr-auto" dir="ltr">project.ts</span>
+                <span className="text-muted-foreground text-[10px] font-mono ml-auto" dir="ltr">project.ts</span>
               </div>
               <div className="space-y-2 font-mono text-sm" dir="ltr">
                 <p className="text-muted-foreground">
                   <span className="text-accent">const</span>{" "}
                   <span className="text-primary">project</span> = {"{"}
                 </p>
-                <p className="text-muted-foreground pr-4">
+                <p className="text-muted-foreground pl-4">
                   design: <span className="text-primary">"amazing"</span>,
                 </p>
-                <p className="text-muted-foreground pr-4">
+                <p className="text-muted-foreground pl-4">
                   speed: <span className="text-primary">"blazing"</span>,
                 </p>
-                <p className="text-muted-foreground pr-4">
+                <p className="text-muted-foreground pl-4">
                   quality: <span className="text-primary">"premium"</span>
                 </p>
                 <p className="text-muted-foreground">{"}"}</p>
@@ -129,9 +131,11 @@ const HomePage = () => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="glass-card p-6 rounded-xl text-center float-3d animate-fade-in"
+                className="neon-card p-6 rounded-xl text-center float-3d animate-fade-in cursor-pointer"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
+                <div className="card-corner-accent top-left" />
+                <div className="card-corner-accent bottom-right" />
                 <div className="text-3xl font-heading font-bold gradient-text mb-1">{stat.num}</div>
                 <p className="text-muted-foreground text-sm">{stat.label}</p>
               </div>
@@ -156,9 +160,11 @@ const HomePage = () => {
             {services.map((service, i) => (
               <div
                 key={i}
-                className="glass-card p-6 rounded-xl float-3d animate-fade-in"
+                className="neon-card p-6 rounded-xl float-3d animate-fade-in cursor-pointer"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
+                <div className="card-corner-accent top-left" />
+                <div className="card-corner-accent bottom-right" />
                 <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
                   <service.icon size={24} className="text-primary-foreground" />
                 </div>
@@ -185,7 +191,9 @@ const HomePage = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="glass-card p-6 rounded-xl animate-fade-in" style={{ animationDelay: `${i * 0.15}s` }}>
+              <div key={i} className="neon-card p-6 rounded-xl animate-fade-in cursor-pointer" style={{ animationDelay: `${i * 0.15}s` }}>
+                <div className="card-corner-accent top-left" />
+                <div className="card-corner-accent bottom-right" />
                 <div className="flex gap-1 mb-3">
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-primary fill-primary" />
@@ -209,12 +217,12 @@ const HomePage = () => {
         <div className="floating-hexagon absolute top-1/3 right-[5%] w-12 h-12 opacity-15" style={{ animationDelay: "2s" }} />
         <div className="glow-orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 opacity-60" />
         <div className="container relative z-10">
-          <div className="glass-card rounded-2xl p-10 text-center glow-border relative overflow-hidden">
+          <div className="neon-card rounded-2xl p-10 text-center relative overflow-hidden cursor-pointer neon-pulse">
             {/* Corner accents on CTA */}
-            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary/30 rounded-tl-2xl" />
-            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-accent/30 rounded-tr-2xl" />
-            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-accent/30 rounded-bl-2xl" />
-            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-primary/30 rounded-br-2xl" />
+            <div className="card-corner-accent top-left" />
+            <div className="card-corner-accent top-right" />
+            <div className="card-corner-accent bottom-left" />
+            <div className="card-corner-accent bottom-right" />
             <h2 className="text-3xl font-heading font-bold mb-4">
               جاهز لبناء مشروعك <span className="gradient-text">الرقمي</span>؟
             </h2>

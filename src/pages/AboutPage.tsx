@@ -1,4 +1,5 @@
 import { Code, Figma, Database, Globe, Cpu, Users } from "lucide-react";
+import BackButton from "@/components/BackButton";
 
 const skills = [
   { icon: Code, name: "React / Next.js" },
@@ -22,6 +23,9 @@ const AboutPage = () => {
   return (
     <div className="py-20">
       <div className="container max-w-3xl">
+        {/* Back Button */}
+        <BackButton />
+
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">

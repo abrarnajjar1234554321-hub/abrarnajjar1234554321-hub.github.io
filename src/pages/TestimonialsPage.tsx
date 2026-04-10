@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import BackButton from "@/components/BackButton";
 
 const testimonials = [
   { name: "أحمد محمد", role: "مؤسس شركة تقنية", text: "عمل احترافي بكل معنى الكلمة. الموقع تجاوز توقعاتي من حيث التصميم والأداء. أنصح بالتعامل معه بشدة.", rating: 5 },
@@ -13,6 +14,11 @@ const TestimonialsPage = () => {
   return (
     <div className="py-20">
       <div className="container">
+        {/* Back Button */}
+        <div className="max-w-4xl mx-auto">
+          <BackButton />
+        </div>
+
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
             آراء <span className="gradient-text">العملاء</span>

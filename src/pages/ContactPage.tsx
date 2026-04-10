@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Instagram, Facebook, Linkedin, Send, MessageCircle } from "lucide-react";
+import BackButton from "@/components/BackButton";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -14,6 +15,9 @@ const ContactPage = () => {
   return (
     <div className="py-20">
       <div className="container max-w-3xl">
+        {/* Back Button */}
+        <BackButton />
+
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-heading font-bold mb-4">
             <span className="gradient-text">تواصل</span> معي

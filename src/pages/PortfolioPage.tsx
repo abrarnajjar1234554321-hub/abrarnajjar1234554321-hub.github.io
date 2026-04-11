@@ -1,47 +1,53 @@
 import { ExternalLink } from "lucide-react";
 import BackButton from "@/components/BackButton";
+import educationImage from "@/assets/portfolio/education-saas.jpg";
+import ecommerceImage from "@/assets/portfolio/ecommerce-store.jpg";
+import taskImage from "@/assets/portfolio/task-app.jpg";
+import consultingImage from "@/assets/portfolio/consulting-website.jpg";
+import analyticsImage from "@/assets/portfolio/analytics-dashboard.jpg";
+import photographerImage from "@/assets/portfolio/photographer-portfolio.jpg";
 
 const projects = [
   {
     title: "منصة SaaS للتعليم",
     desc: "منصة تعليمية متكاملة مع نظام اشتراكات ولوحة تحكم للمعلمين والطلاب",
     tech: ["React", "Supabase", "Stripe"],
-    image: "📚",
+    image: educationImage,
     link: "#",
   },
   {
     title: "متجر إلكتروني",
     desc: "متجر متكامل لبيع المنتجات الرقمية مع بوابة دفع ونظام تتبع طلبات",
     tech: ["Next.js", "PostgreSQL", "Tailwind"],
-    image: "🛒",
+    image: ecommerceImage,
     link: "#",
   },
   {
     title: "تطبيق إدارة المهام",
     desc: "تطبيق ويب لإدارة المهام والمشاريع مع تعاون فريق العمل",
     tech: ["React", "Firebase", "TypeScript"],
-    image: "✅",
+    image: taskImage,
     link: "#",
   },
   {
     title: "موقع شركة استشارات",
     desc: "موقع احترافي لشركة استشارات مع نظام حجز مواعيد ومدونة",
     tech: ["Lovable", "Supabase", "Framer Motion"],
-    image: "🏢",
+    image: consultingImage,
     link: "#",
   },
   {
     title: "لوحة تحكم تحليلات",
     desc: "داشبورد متقدم لعرض البيانات والتحليلات مع رسوم بيانية تفاعلية",
     tech: ["React", "Recharts", "REST API"],
-    image: "📊",
+    image: analyticsImage,
     link: "#",
   },
   {
     title: "موقع بورتفوليو مصور",
     desc: "موقع معرض أعمال لمصور فوتوغرافي مع معرض صور تفاعلي",
     tech: ["React", "CSS Animations", "Cloudinary"],
-    image: "📷",
+    image: photographerImage,
     link: "#",
   },
 ];
@@ -51,7 +57,7 @@ const PortfolioPage = () => {
     <div className="py-20">
       <div className="container">
         {/* Back Button */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-8">
           <BackButton />
         </div>
 
@@ -68,11 +74,19 @@ const PortfolioPage = () => {
           {projects.map((project, i) => (
             <div
               key={i}
-              className="glass-card rounded-2xl overflow-hidden float-3d animate-fade-in group"
+              className="neon-card rounded-2xl overflow-hidden animate-fade-in group cursor-pointer"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <div className="h-40 gradient-primary flex items-center justify-center text-6xl opacity-80">
-                {project.image}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  width={800}
+                  height={512}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-heading font-bold mb-2">{project.title}</h3>
@@ -86,7 +100,7 @@ const PortfolioPage = () => {
                 </div>
                 <a
                   href={project.link}
-                  className="text-primary text-sm hover:underline flex items-center gap-1"
+                  className="text-primary text-sm hover:underline flex items-center gap-1 transition-colors duration-300"
                 >
                   زيارة المشروع <ExternalLink size={12} />
                 </a>
